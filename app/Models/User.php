@@ -42,7 +42,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'password' => 'hashed', // Aqui já estou tratando a questão da criptografia das senhas dos usuários
     ];
 
     public function tasks (){

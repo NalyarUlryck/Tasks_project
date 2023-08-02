@@ -16,7 +16,6 @@
             <x-form.checkbox_input
                 name="is_done"
                 label="Tarefa realizada?"
-                required="required"
                 :checked="$task->is_done"
             />
 
