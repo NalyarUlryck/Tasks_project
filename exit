@@ -1,0 +1,12 @@
+[90m= [39m[34;4mApp\Models\Task[39;24m {#6566
+    [34mid[39m: [35m2[39m,
+    [34mis_done[39m: [35m0[39m,
+    [34mtitle[39m: "[32mAspernatur quo quis eos sint.[39m",
+    [34mdescription[39m: "[32mIusto sit quia tempora in exercitationem.[39m",
+    [34mdue_date[39m: "[32m2011-10-23 12:58:59[39m",
+    [34muser_id[39m: [35m8[39m,
+    [34mcategory_id[39m: [35m3[39m,
+    [34mcreated_at[39m: "[32m2023-07-31 19:51:31[39m",
+    [34mupdated_at[39m: "[32m2023-07-31 19:51:31[39m",
+  }
+
