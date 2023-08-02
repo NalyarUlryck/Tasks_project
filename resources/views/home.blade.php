@@ -9,6 +9,7 @@
     </x-slot:btn>
 
     <section class="graph">
+        {{-- <h2>Bem-vindo {{$AuthUser->name}} </h2> Aqui estou chamando o usuário que foi autenticado. --}}
         <div class="graph_header">
             <h2>Progresso do dia</h2>
             <div class="graph_header-line"></div>

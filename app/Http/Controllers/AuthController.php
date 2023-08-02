@@ -19,7 +19,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
-        dd(Auth::attempt($validator));
+        if(Auth::attempt($validator)){
+            return redirect()->route('home'); // Estou verificando se o usuário está autenticado e o redirecoinando para página inicial.  pode ser usado dessa forma também: redirect(route('home'))
+        }
     }
 
     public function register(Request $r)
