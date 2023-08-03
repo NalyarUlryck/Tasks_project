@@ -24,7 +24,7 @@ class TaskController extends Controller
         $task = $r->only(['title', 'category_id', 'description', 'due_date']);
         $task['user_id'] =1;
         $dbTask = Task::create($task);
-        return $dbTask;
+        return redirect(route('home'));
     }
 
     public function edit(Request $r)

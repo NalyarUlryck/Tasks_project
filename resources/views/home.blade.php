@@ -23,12 +23,12 @@
             </div>
         </div>
         <div class="graph_header-subtitle">
-            Tarefas: <strong>3/6</strong>
+            Tarefas: <strong>{{ $tasks_count - $undone_tasks_count }}/{{ $tasks_count }}</strong>
         </div>
         <div class="graph-placeholder"></div>
         <div class="task_left_footer">
             <img src="/assets/images/icon-info.png" alt="" srcset="">
-            Restam 3 tarefas para serem realizadas
+             {{ $undone_tasks_count != 1 && $undone_tasks_count != 0  ? "Restam $undone_tasks_count tarefas a serem realizadas" : "Resta $undone_tasks_count tarefa a ser realizada " }} 
         </div>
     </section>
     <section class="list">
