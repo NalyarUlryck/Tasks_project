@@ -69,6 +69,9 @@ class TaskController extends Controller
     public function update(Request $r)
     {
         $task = Task::findOrFail($r->taskId);
+        if (!$task) {
+            return ['sucess' => false];
+        }
         $task->is_done = $r->status;
         $task->save();
         return ['success' => true];

@@ -56,7 +56,7 @@
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
-                    'accept': 'aaplication/json'
+                    'accept': 'application/json'
                 },
                 body: JSON.stringify({status, taskId, _token: '{{ csrf_token() }}'}) 
             });
