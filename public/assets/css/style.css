@@ -49,6 +49,9 @@ nav {
     padding-right: 20px;
 }
 
+.userName{
+    margin-left: 20px;
+}
 .btn { /* definições de tamanho básicos do botão*/
     padding: 20px 30px; /* -> vertical - horizontal*/
     margin-right: 10px;

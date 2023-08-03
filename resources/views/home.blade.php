@@ -1,7 +1,7 @@
 <x-layout> {{-- Foi componentezado: estou chamando o layout que nunca munda pra home: --}}
 
     <x-slot:btn> {{-- Setando botão pra criar tarefa que irá pro layout--}}
-
+        <h2 class="userName"> Bem-vindo(a) {{($AuthUser->name) ?? ''}} </h2>
         <a href="{{route('task.crate')}}" class="btn btn-primary" >
             Criar Tarefa
         </a>

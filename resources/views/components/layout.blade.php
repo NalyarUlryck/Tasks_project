@@ -17,6 +17,7 @@
         </div>
         <div class="content">
             <nav>
+                
                 {{$btn ?? null}} {{-- Aqui vou receber os tipos de botões que irei setar--}}
             </nav>
             <main>
