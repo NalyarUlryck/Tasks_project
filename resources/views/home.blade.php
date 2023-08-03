@@ -5,6 +5,9 @@
         <a href="{{route('task.crate')}}" class="btn btn-primary" >
             Criar Tarefa
         </a>
+        <a href="{{route('logout')}}" class="btn btn-logout" >
+            Sair
+        </a>
 
     </x-slot:btn>
 

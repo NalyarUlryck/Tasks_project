@@ -75,6 +75,10 @@ a.btn { /* Toda vez que eu tiver um elemento 'a' na classe btn retira-se o under
     background-color: var(--dark-yellow);
     color: var(--text-dark);
 }
+.btn-logout{ /* definições de cores de fundo e de texto*/
+    background-color: var(--text-dark);
+    color: var(--background-white);
+}
 
 main{
     display: flex;

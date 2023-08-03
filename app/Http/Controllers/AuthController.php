@@ -10,6 +10,11 @@ class AuthController extends Controller
 {
     public function index (Request $r)
     {
+        $isloggedin = Auth::check(); // Se o usuário estiver logado ele vai continuar em home.
+        if ($isloggedin) 
+        {
+            return redirect()->route('home');
+        }
         return view('login');
     }
 
@@ -25,7 +30,18 @@ class AuthController extends Controller
     }
 
     public function register(Request $r)
-    {
+    {   
+       
+        // if (Auth::user()) {// A mesma função da Auth::check(), mas é melhor este pois o user traz tudo.
+        //     return redirect(route('home'));
+        // }
+
+        //Deixando mais verboso ou melhor de entender:
+        $isloggedin = Auth::check(); // Estou armazenando a checagem numa variável 
+        if ($isloggedin) { // Verifico se o usuário está logado
+            return redirect(route('home')); // não permito que ele acesse a página de cadastro.
+        }
+
         return view('register');
     }
 
@@ -41,5 +57,11 @@ class AuthController extends Controller
         $data =$r->only('name', 'email', 'password');
         $userCreated = User::create($data);
         return redirect(route('login'));
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
