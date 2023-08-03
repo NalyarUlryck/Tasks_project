@@ -65,4 +65,12 @@ class TaskController extends Controller
         }
         return redirect(route('home'));
     }
+
+    public function update(Request $r)
+    {
+        $task = Task::findOrFail($r->taskId);
+        $task->is_done = $r->status;
+        $task->save();
+        return ['success' => true];
+    }
 }

@@ -45,4 +45,27 @@
 
         </div>
     </section>
+
+    <script>
+        async function taskUpdate(element){
+            // alert(element.checked)// Estou imprimindo um alerta se o checkbox está marcado ou não
+            let status = element.checked; //Se for false, ele estará desmarcando e se for true fará o inverso.
+            let taskId = element.dataset.id; // 
+            let url = '{{route('task.update')}}'; // O blade ja vai pegar a rota dinamicamente pra mim.
+            let rawResult = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    'accept': 'aaplication/json'
+                },
+                body: JSON.stringify({status, taskId, _token: '{{ csrf_token() }}'}) 
+            });
+            result = await result.json();
+            if (result.success) {
+                alert('Task Atualizada com sucesso!');
+            } else{
+                element.checked = !status;
+            }
+         }
+    </script>
 </x-layout>

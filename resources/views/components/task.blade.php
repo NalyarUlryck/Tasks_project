@@ -1,6 +1,10 @@
 <div class="task">
     <div class="title">
-        <input type="checkbox"
+        <input type="checkbox" 
+
+        onchange="taskUpdate(this)" {{-- Verifico a alteração que teve (js) --}}
+        data-id="{{$data['id']}}" {{-- Estou pegando o id da task diretamente e passar pra esse elemento --}}
+        
             {{-- @if (isset($data) && $data['is_done'])
                 checked
             @endif --}}
