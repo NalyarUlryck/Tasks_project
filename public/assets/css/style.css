@@ -46,7 +46,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 20px;
 }
 
 .userName{
@@ -129,7 +128,8 @@ h2{
     width: 300px;
     height: 300px;
     margin-top: 50px;
-    margin-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
     background: url(/assets/images/graph.png); /*Vai sobrescrever o background anterior*/
     background-size: contain; /* vai comportar a imagen perfeitamente no placeholder */
 

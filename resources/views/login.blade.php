@@ -36,5 +36,7 @@
 
             <x-form.form_button submitTxt="login" resetTxt="Limpar"/>
     </section>
+    <script>
+    </script>
 </x-layout>
 

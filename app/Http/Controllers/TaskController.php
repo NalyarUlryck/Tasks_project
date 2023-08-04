@@ -45,7 +45,6 @@ class TaskController extends Controller
     {
         $request_data =  $r->only(['title', 'due_date', 'category_id', 'description']);
         $request_data['is_done'] = $r->is_done ? true: false;
-        dd($request_data);
         $task = Task::find($r->id);
         if (!$task) {
             return 'Task não existe';
@@ -69,9 +68,6 @@ class TaskController extends Controller
     public function update(Request $r)
     {
         $task = Task::findOrFail($r->taskId);
-        if (!$task) {
-            return ['sucess' => false];
-        }
         $task->is_done = $r->status;
         $task->save();
         return ['success' => true];

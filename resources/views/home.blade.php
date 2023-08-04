@@ -28,7 +28,7 @@
         <div class="graph-placeholder"></div>
         <div class="task_left_footer">
             <img src="/assets/images/icon-info.png" alt="" srcset="">
-             {{ $undone_tasks_count != 1 && $undone_tasks_count != 0  ? "Restam $undone_tasks_count tarefas a serem realizadas" : "Resta $undone_tasks_count tarefa a ser realizada " }} 
+             {{ $undone_tasks_count != 1 && $undone_tasks_count != 0  ? "Restam $undone_tasks_count tarefas a serem realizadas" : "Resta $undone_tasks_count tarefa a ser realizada " }}
         </div>
     </section>
     <section class="list">
@@ -50,7 +50,7 @@
         async function taskUpdate(element){
             // alert(element.checked)// Estou imprimindo um alerta se o checkbox está marcado ou não
             let status = element.checked; //Se for false, ele estará desmarcando e se for true fará o inverso.
-            let taskId = element.dataset.id; // 
+            let taskId = element.dataset.id; //
             let url = '{{route('task.update')}}'; // O blade ja vai pegar a rota dinamicamente pra mim.
             let rawResult = await fetch(url, {
                 method: 'POST',
@@ -58,11 +58,11 @@
                     'Content-type': 'application/json',
                     'accept': 'application/json'
                 },
-                body: JSON.stringify({status, taskId, _token: '{{ csrf_token() }}'}) 
+                body: JSON.stringify({status, taskId, _token: '{{ csrf_token() }}'})
             });
-            result = await result.json();
+            result = await rawResult.json();
             if (result.success) {
-                alert('Task Atualizada com sucesso!');
+                alert('Task atualizada com sucesso!');
             } else{
                 element.checked = !status;
             }

@@ -1,5 +1,5 @@
 
 {{--  AQUI ESTOU DEFININDO APENAS O BOTÃO --}}
 
-<button type="{{$type}}" class="btn {{$type === 'submit' ? 'btn-primary': 'btn-secondary'}}">{{$slot}}</button>
+<button type="{{$type}}" class=" {{$type === 'submit' ? ' btn btn-primary': 'btn btn-secondary'}}">{{$slot}}</button>
 

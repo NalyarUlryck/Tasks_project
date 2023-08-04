@@ -47,7 +47,7 @@
                 :value="$task->description"
             />
 
-            <x-form.form_button submitTxt="Atualizar tarefa" resetTxt="Reset"/>
+            <x-form.form_button submitTxt="Atualizar tarefa"/>
     </section>
 </x-layout>
 

@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function index (Request $r)
     {
         $isloggedin = Auth::check(); // Se o usuário estiver logado ele vai continuar em home.
-        if ($isloggedin) 
+        if ($isloggedin)
         {
             return redirect()->route('home');
         }
@@ -24,20 +24,23 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
-        if(Auth::attempt($validator)){
-            return redirect()->route('home'); // Estou verificando se o usuário está autenticado e o redirecoinando para página inicial.  pode ser usado dessa forma também: redirect(route('home'))
+
+        if(Auth::attempt($validator)){ // O attempt encriptografa a senha e compara com a has do banco.
+            return redirect()->route('home'); // Estou verificando se o usuário está autenticado e o redirecionando para página inicial.  pode ser usado dessa forma também: redirect(route('home'))
+        }else {
+             return redirect()->route('home');
         }
     }
 
     public function register(Request $r)
-    {   
-       
+    {
+
         // if (Auth::user()) {// A mesma função da Auth::check(), mas é melhor este pois o user traz tudo.
         //     return redirect(route('home'));
         // }
 
         //Deixando mais verboso ou melhor de entender:
-        $isloggedin = Auth::check(); // Estou armazenando a checagem numa variável 
+        $isloggedin = Auth::check(); // Estou armazenando a checagem numa variável
         if ($isloggedin) { // Verifico se o usuário está logado
             return redirect(route('home')); // não permito que ele acesse a página de cadastro.
         }
